@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20233.23.1017.0948                               -->
+<workbook original-version='18.1' source-build='2023.3.0 (20233.23.1017.0948)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='uk' inline='true' name='federated.02torjo052xffj19svdmw01y698q' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='uk' name='excel-direct.1i901tf1l2g7h6152syri0scum9q'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='Data/google-trends/uk.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.1i901tf1l2g7h6152syri0scum9q' name='d mmm, yyyy' table='[&apos;d mmm, yyyy$&apos;]' type='table'>
+          <columns gridOrigin='A1:D242:no:A1:D242:0' header='yes' outcome='6'>
+            <column datatype='date' date-parse-format='dd MMM, yyyy' name='Month' ordinal='0' />
+            <column datatype='integer' name='learn sql' ordinal='1' />
+            <column datatype='integer' name='learn python' ordinal='2' />
+            <column datatype='integer' name='index' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='excel-direct.1i901tf1l2g7h6152syri0scum9q' name='d mmm, yyyy' table='[&apos;d mmm, yyyy$&apos;]' type='table'>
+          <columns gridOrigin='A1:D242:no:A1:D242:0' header='yes' outcome='6'>
+            <column datatype='date' date-parse-format='dd MMM, yyyy' name='Month' ordinal='0' />
+            <column datatype='integer' name='learn sql' ordinal='1' />
+            <column datatype='integer' name='learn python' ordinal='2' />
+            <column datatype='integer' name='index' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[d mmm, yyyy]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D242:no:A1:D242:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[d mmm, yyyy]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RGB_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>learn sql</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[learn sql]</local-name>
+            <parent-name>[d mmm, yyyy]</parent-name>
+            <remote-alias>learn sql</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>learn python</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[learn python]</local-name>
+            <parent-name>[d mmm, yyyy]</parent-name>
+            <remote-alias>learn python</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>index</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[index]</local-name>
+            <parent-name>[d mmm, yyyy]</parent-name>
+            <remote-alias>index</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='d mmm, yyyy' datatype='table' name='[__tableau_internal_object_id__].[d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC]' role='measure' type='quantitative' />
+      <column caption='Index' datatype='integer' name='[index]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[learn python]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[learn sql]' role='measure' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <column-instance column='[index]' derivation='Sum' name='[sum:index:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[learn python]' derivation='Sum' name='[sum:learn python:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[learn sql]' derivation='Sum' name='[sum:learn sql:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#006699'>
+              <bucket>&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:learn sql:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.02torjo052xffj19svdmw01y698q].[__tableau_internal_object_id__].[cnt:d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC:qk]&quot;</bucket>
+            </map>
+            <map to='#f0e442'>
+              <bucket>&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:learn python:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:index:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United Kingdom&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='d mmm, yyyy' id='d mmm, yyyy_00ACA4B7DD6447179C38EE8621B113CC'>
+            <properties context=''>
+              <relation connection='excel-direct.1i901tf1l2g7h6152syri0scum9q' name='d mmm, yyyy' table='[&apos;d mmm, yyyy$&apos;]' type='table'>
+                <columns gridOrigin='A1:D242:no:A1:D242:0' header='yes' outcome='6'>
+                  <column datatype='date' date-parse-format='dd MMM, yyyy' name='Month' ordinal='0' />
+                  <column datatype='integer' name='learn sql' ordinal='1' />
+                  <column datatype='integer' name='learn python' ordinal='2' />
+                  <column datatype='integer' name='index' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Highlight 1 (generated)' name='[Action1_4B734623F7D044BE9393CBCE89BEEDF6]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='Sheet 1' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Measure Names' />
+        <param name='target' value='Sheet 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Google Trends: Interest in Learning SQL vs Python (UK)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='uk' name='federated.02torjo052xffj19svdmw01y698q' />
+          </datasources>
+          <datasource-dependencies datasource='federated.02torjo052xffj19svdmw01y698q'>
+            <column datatype='date' name='[Month]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[learn python]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[learn sql]' role='measure' type='quantitative' />
+            <column-instance column='[learn python]' derivation='Sum' name='[sum:learn python:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[learn sql]' derivation='Sum' name='[sum:learn sql:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Month]' derivation='Month-Trunc' name='[tmn:Month:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.02torjo052xffj19svdmw01y698q].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:learn python:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:learn sql:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.02torjo052xffj19svdmw01y698q].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:learn sql:qk]&quot;</bucket>
+              <bucket>&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:learn python:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.02torjo052xffj19svdmw01y698q].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]' scope='cols' value='Year' />
+            <format attr='title' class='0' field='[federated.02torjo052xffj19svdmw01y698q].[Multiple Values]' scope='rows' value='Search Volume' />
+            <format attr='tick-color' field='[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]' value='#000000' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-weight' field='[federated.02torjo052xffj19svdmw01y698q].[Multiple Values]' value='bold' />
+            <format attr='font-weight' field='[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]' value='bold' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.02torjo052xffj19svdmw01y698q].[:Measure Names]' value='Search Terms' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-family' field='[federated.02torjo052xffj19svdmw01y698q].[Multiple Values]' value='Tableau Book' />
+            <format attr='font-family' field='[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]' value='Tableau Book' />
+            <format attr='font-weight' field='[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='off' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <encodings>
+              <color column='[federated.02torjo052xffj19svdmw01y698q].[:Measure Names]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='116' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#898989' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.02torjo052xffj19svdmw01y698q].[Multiple Values]</rows>
+        <cols>[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]</cols>
+        <annotations>
+          <annotation class='point' id='0' mark-position='1' pullback='2.23607' text-width='141'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontsize='9' underline='true'>SQL interest peak</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontcolor='#787878' fontsize='9'>Month: </run>
+              <run bold='true' fontalignment='1' fontsize='9'><![CDATA[<[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]>]]></run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontcolor='#787878' fontsize='9'>Search volume: </run>
+              <run bold='true' fontalignment='1' fontsize='9'><![CDATA[<[federated.02torjo052xffj19svdmw01y698q].[sum:learn sql:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.02torjo052xffj19svdmw01y698q].[Multiple Values]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]</field>
+                      <field>[federated.02torjo052xffj19svdmw01y698q].[:Measure Names]</field>
+                      <field>[federated.02torjo052xffj19svdmw01y698q].[Multiple Values]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>#2004-10-01 00:00:00#</value>
+                    <value>&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:learn sql:qk]&quot;</value>
+                    <value>100.0</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='169' y='-61' />
+          </annotation>
+          <annotation class='point' id='1' mark-position='1' pullback='0' text-width='136'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontsize='9' underline='true'>Python interest peak</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontcolor='#787878' fontsize='9'>Month: </run>
+              <run bold='true' fontalignment='1' fontsize='9'><![CDATA[<[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]>]]></run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontcolor='#787878' fontsize='9'>Search volume: </run>
+              <run bold='true' fontalignment='1' fontsize='9'><![CDATA[<[federated.02torjo052xffj19svdmw01y698q].[sum:learn python:qk]>]]></run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='mark'>
+                <tuple-reference>
+                  <tuple-descriptor>
+                    <pane-descriptor>
+                      <x-fields>
+                        <field>[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]</field>
+                      </x-fields>
+                      <y-fields>
+                        <field>[federated.02torjo052xffj19svdmw01y698q].[Multiple Values]</field>
+                      </y-fields>
+                    </pane-descriptor>
+                    <columns>
+                      <field>[federated.02torjo052xffj19svdmw01y698q].[tmn:Month:qk]</field>
+                      <field>[federated.02torjo052xffj19svdmw01y698q].[:Measure Names]</field>
+                      <field>[federated.02torjo052xffj19svdmw01y698q].[Multiple Values]</field>
+                    </columns>
+                  </tuple-descriptor>
+                  <tuple>
+                    <value>#2020-04-01 00:00:00#</value>
+                    <value>&quot;[federated.02torjo052xffj19svdmw01y698q].[sum:learn python:qk]&quot;</value>
+                    <value>92.0</value>
+                  </tuple>
+                </tuple-reference>
+              </visual-coordinate>
+            </point>
+            <body x='-202' y='-168' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{68A53C09-611E-4DD2-A2F9-313034A9FF56}' />
+    </worksheet>
+  </worksheets>
+  <windows show-side-pane='false' source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='100'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='106'>
+            <card pane-specification-id='3' param='[federated.02torjo052xffj19svdmw01y698q].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6A0A7D8D-1E86-4A96-B61F-3E24810DEB8C}' />
+    </window>
+  </windows>
+</workbook>
