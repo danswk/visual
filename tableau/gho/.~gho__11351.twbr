@@ -684,6 +684,73 @@
     <mapsource name='Tableau' />
   </mapsources>
   <worksheets>
+    <worksheet name='Bubble'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>HIV Cases</run>
+            <run> by Population</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Life Expectancy Data Updated (gho)' name='federated.0c4ew3c1gsznh9149en4t1v45hnw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0c4ew3c1gsznh9149en4t1v45hnw'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='HIV Cases (/1,000)' datatype='real' name='[Incidents_HIV]' role='measure' type='quantitative' />
+            <column caption='Population (M)' datatype='real' name='[Population_mln]' role='measure' type='quantitative' />
+            <column-instance column='[Incidents_HIV]' derivation='Avg' name='[avg:Incidents_HIV:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Population_mln]' derivation='Avg' name='[avg:Population_mln:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Population_mln:qk]' palette='orange_gold_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Population_mln:qk]' value='Avg. Population 2000-2015 (M)'>
+              <formatted-text>
+                <run bold='true' fontname='Tableau Book'>Avg. Population 2000-2015 (M)</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Incidents_HIV:qk]' />
+              <text column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Country:nk]' />
+              <color column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Population_mln:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{22EA9BFD-6259-43C7-973B-E52FCB46B57A}' />
+    </worksheet>
     <worksheet name='Map (ES)'>
       <layout-options>
         <title>
@@ -718,7 +785,7 @@
         <style>
           <style-rule element='axis'>
             <encoding attr='space' class='0' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[Longitude (generated)]' field-type='quantitative' max='27168824.166140702' min='-12906192.51943779' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[Latitude (generated)]' field-type='quantitative' max='18125532.820849486' min='-18125532.820849486' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[Latitude (generated)]' field-type='quantitative' max='19033625.02046302' min='-19033625.02046302' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Economy_status_Developing:qk]' num-steps='2' type='custom-interpolated'>
@@ -846,7 +913,7 @@
         <style>
           <style-rule element='axis'>
             <encoding attr='space' class='0' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[Longitude (generated)]' field-type='quantitative' max='27168824.166140702' min='-12906192.51943779' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[Latitude (generated)]' field-type='quantitative' max='18125532.820849486' min='-18125532.820849486' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[Latitude (generated)]' field-type='quantitative' max='19033625.02046302' min='-19033625.02046302' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Schooling:qk]' palette='red_green_gold_diverging_10_0' type='interpolated' />
@@ -921,33 +988,7 @@
             <format attr='font-weight' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Life_expectancy:qk]' value='bold' />
           </style-rule>
           <style-rule element='mark'>
-            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Economy_status_Developed:qk]' num-steps='2' type='custom-interpolated'>
-              <color-palette custom='true' name='' type='ordered-diverging'>
-                <color>#e03d43</color>
-                <color>#df4b51</color>
-                <color>#de5a5f</color>
-                <color>#de686c</color>
-                <color>#dd767a</color>
-                <color>#dc8588</color>
-                <color>#dc9396</color>
-                <color>#dba1a3</color>
-                <color>#daafb1</color>
-                <color>#dabdbe</color>
-                <color>#d9cbcb</color>
-                <color>#d9d9d9</color>
-                <color>#cdd5cc</color>
-                <color>#c1d1bf</color>
-                <color>#b6cdb3</color>
-                <color>#accaa7</color>
-                <color>#a1c69b</color>
-                <color>#97c28f</color>
-                <color>#8dbe84</color>
-                <color>#83bb7a</color>
-                <color>#7ab76f</color>
-                <color>#70b365</color>
-                <color>#68b05c</color>
-              </color-palette>
-            </encoding>
+            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Economy_status_Developed:qk]' num-steps='2' palette='red_green_gold_diverging_10_0' type='interpolated' />
           </style-rule>
           <style-rule element='refline'>
             <format attr='stroke-color' id='refline0' value='#000000' />
@@ -1277,68 +1318,15 @@
       </table>
       <simple-id uuid='{881C8804-3B22-486B-B8FA-D346FE6747ED}' />
     </worksheet>
-    <worksheet name='Sheet 3'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Life Expectancy Data Updated (gho)' name='federated.0c4ew3c1gsznh9149en4t1v45hnw' />
-          </datasources>
-          <datasource-dependencies datasource='federated.0c4ew3c1gsznh9149en4t1v45hnw'>
-            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-            <column datatype='real' name='[Schooling]' role='measure' type='quantitative' />
-            <column caption='Thinness (5-9 years)' datatype='real' name='[Thinness_five_nine_years]' role='measure' type='quantitative' />
-            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Schooling]' derivation='None' name='[none:Schooling:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Schooling]' derivation='Sum' name='[sum:Schooling:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Thinness_five_nine_years]' derivation='Sum' name='[sum:Thinness_five_nine_years:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='mark'>
-            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Schooling:qk]' palette='red_green_gold_diverging_10_0' type='interpolated' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Circle' />
-            <encodings>
-              <size column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Thinness_five_nine_years:qk]' />
-              <text column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Country:nk]' />
-              <text column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Schooling:qk]' />
-              <color column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Schooling:qk]' />
-            </encodings>
-            <customized-label>
-              <formatted-text>
-                <run>&lt;</run>
-                <run>[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Country:nk]</run>
-                <run>&gt;</run>
-              </formatted-text>
-            </customized-label>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-line-first' value='true' />
-                <format attr='mark-labels-line-last' value='true' />
-                <format attr='mark-labels-range-min' value='true' />
-                <format attr='mark-labels-mode' value='range' />
-                <format attr='mark-labels-range-field' value='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Thinness_five_nine_years:qk]' />
-                <format attr='mark-labels-range-scope' value='pane' />
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-range-max' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows />
-        <cols />
-      </table>
-      <simple-id uuid='{E9098F8A-0ECF-416D-843F-A254CA3961C6}' />
-    </worksheet>
     <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Tableau Book'>Global Health Observatory:</run>
+            <run fontname='Tableau Book'> Polio Immunisation Coverage in 1-Year-Olds vs Infant Deaths</run>
+          </formatted-text>
+        </title>
+      </layout-options>
       <table>
         <view>
           <datasources>
@@ -1358,10 +1346,33 @@
         <style>
           <style-rule element='axis'>
             <encoding attr='space' class='0' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Infant_deaths:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+            <format attr='tick-color' value='#000000' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-family' value='Tableau Book' />
+            <format attr='font-weight' value='bold' />
           </style-rule>
           <style-rule element='mark'>
-            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' palette='tableau-blue-light' type='interpolated' />
-            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Infant_deaths:qk]' palette='tableau-orange-light' type='interpolated' />
+            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' palette='blue_teal_10_0' type='interpolated' />
+            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Infant_deaths:qk]' palette='red_gold_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Infant_deaths:qk]' value='Infant Deaths (/1,000)'>
+              <formatted-text>
+                <run bold='true' fontname='Tableau Book'>Infant Deaths (/1,000)</run>
+              </formatted-text>
+            </format>
+            <format attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' value='Polio Immunization (%)'>
+              <formatted-text>
+                <run bold='true' fontname='Tableau Book'>Polio Immunization (%)</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-family' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' value='Tableau Book' />
+            <format attr='font-weight' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' value='bold' />
+            <format attr='font-family' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Infant_deaths:qk]' value='Tableau Book' />
+            <format attr='font-weight' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Infant_deaths:qk]' value='bold' />
           </style-rule>
         </style>
         <panes>
@@ -1415,12 +1426,12 @@
       </table>
       <simple-id uuid='{2A217122-E63B-4B54-A44A-63B37BDE8E2D}' />
     </worksheet>
-    <worksheet name='Sheet 5'>
+    <worksheet name='Sheet 4 (2)'>
       <layout-options>
         <title>
           <formatted-text>
-            <run bold='true'>HIV Cases</run>
-            <run> by Population</run>
+            <run bold='true' fontname='Tableau Book'>Global Health Observatory:</run>
+            <run fontname='Tableau Book'> Polio Immunisation Coverage in 1-Year-Olds vs Deaths in Under-5-Year-Olds</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -1431,56 +1442,94 @@
           </datasources>
           <datasource-dependencies datasource='federated.0c4ew3c1gsznh9149en4t1v45hnw'>
             <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-            <column caption='HIV Cases (/1,000)' datatype='real' name='[Incidents_HIV]' role='measure' type='quantitative' />
-            <column caption='Population (M)' datatype='real' name='[Population_mln]' role='measure' type='quantitative' />
-            <column-instance column='[Incidents_HIV]' derivation='Avg' name='[avg:Incidents_HIV:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Population_mln]' derivation='Avg' name='[avg:Population_mln:qk]' pivot='key' type='quantitative' />
+            <column datatype='integer' name='[Polio]' role='measure' type='quantitative' />
+            <column caption='Under five deaths' datatype='real' name='[Under_five_deaths]' role='measure' type='quantitative' />
+            <column-instance column='[Polio]' derivation='Avg' name='[avg:Polio:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Under_five_deaths]' derivation='Avg' name='[avg:Under_five_deaths:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
-          <aggregation value='true' />
+          <aggregation value='false' />
         </view>
         <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#000000' />
+            <encoding attr='space' class='0' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Under_five_deaths:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-family' value='Tableau Book' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
           <style-rule element='mark'>
-            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Population_mln:qk]' palette='orange_gold_10_0' type='interpolated' />
+            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' palette='blue_teal_10_0' type='interpolated' />
+            <encoding attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Under_five_deaths:qk]' palette='red_gold_10_0' type='interpolated' />
           </style-rule>
           <style-rule element='legend-title-text'>
-            <format attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Population_mln:qk]' value='Mean Population 2000-2015 (M)'>
+            <format attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' value='Polio Immunisation (%)'>
               <formatted-text>
-                <run bold='true' fontname='Tableau Book'>Mean Population 2000-2015 (M)</run>
+                <run bold='true' fontname='Tableau Book'>Polio Immunisation (%)</run>
+              </formatted-text>
+            </format>
+            <format attr='color' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Under_five_deaths:qk]' value='Under-5 Deaths (/1,000)'>
+              <formatted-text>
+                <run>Under-5 Deaths (/1,000)</run>
               </formatted-text>
             </format>
           </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-family' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' value='Tableau Book' />
+            <format attr='font-weight' field='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' value='bold' />
+          </style-rule>
         </style>
         <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Circle' />
+            <mark class='Bar' />
             <encodings>
-              <size column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Incidents_HIV:qk]' />
-              <text column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Country:nk]' />
-              <color column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Population_mln:qk]' />
+              <lod column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Country:nk]' />
             </encodings>
             <style>
               <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-line-first' value='true' />
-                <format attr='mark-labels-line-last' value='true' />
-                <format attr='mark-labels-range-min' value='true' />
-                <format attr='mark-labels-range-max' value='true' />
-                <format attr='mark-labels-mode' value='all' />
-                <format attr='mark-labels-range-scope' value='pane' />
-                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='6' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <lod column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Country:nk]' />
+              <color column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='7' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Under_five_deaths:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <lod column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Country:nk]' />
+              <color column='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Under_five_deaths:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#000000' />
               </style-rule>
             </style>
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>([federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk] + [federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Under_five_deaths:qk])</rows>
+        <cols>[federated.0c4ew3c1gsznh9149en4t1v45hnw].[none:Country:nk]</cols>
       </table>
-      <simple-id uuid='{22EA9BFD-6259-43C7-973B-E52FCB46B57A}' />
+      <simple-id uuid='{BC94BD9F-81E7-4131-BC88-5F9E8632EED1}' />
     </worksheet>
   </worksheets>
   <dashboards>
@@ -1642,8 +1691,8 @@ Conversely, ‘developed&apos; countries show higher rates of schooling, with a 
       <style />
       <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
       <zones>
-        <zone h='50000' id='3' name='Sheet 5' show-title='false' w='40000' x='500' y='5250' />
-        <zone h='5625' id='8' name='Sheet 5' pane-specification-id='0' param='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Population_mln:qk]' type-v2='color' w='18400' x='400' y='6250' />
+        <zone h='50000' id='3' name='Bubble' show-title='false' w='40000' x='500' y='5250' />
+        <zone h='5625' id='8' name='Bubble' pane-specification-id='0' param='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Population_mln:qk]' type-v2='color' w='18400' x='400' y='6250' />
         <zone forceUpdate='true' h='5250' id='9' type-v2='text' w='24100' x='100' y='0'>
           <formatted-text>
             <run bold='true' fontsize='15'>HIV Cases</run>
@@ -1704,7 +1753,7 @@ Conversely, densely populated (</run>
       <simple-id uuid='{1E47B3B3-04EB-4EDE-8943-995FE2967577}' />
     </dashboard>
   </dashboards>
-  <windows source-height='51'>
+  <windows show-side-pane='false' source-height='48'>
     <window class='worksheet' name='Map (ES)'>
       <cards>
         <edge name='left'>
@@ -1739,7 +1788,7 @@ Conversely, densely populated (</run>
     <window class='worksheet' name='Map (S)'>
       <cards>
         <edge name='left'>
-          <strip size='160'>
+          <strip size='158'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -1757,24 +1806,26 @@ Conversely, densely populated (</run>
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='160'>
+          <strip size='145'>
             <card pane-specification-id='0' param='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Schooling:qk]' type='color' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{ED310869-9590-4AB1-9DC0-027D318B90DE}' />
     </window>
-    <window class='dashboard' maximized='true' name='ES vs S'>
+    <window class='dashboard' name='ES vs S'>
       <viewpoints>
         <viewpoint name='Map (ES)'>
           <zoom type='entire-view' />
           <floating-toolbar-visibility value='1' />
+          <map-navigation value='1' />
         </viewpoint>
         <viewpoint name='Map (S)'>
           <zoom type='entire-view' />
+          <map-navigation value='1' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='3' />
       <simple-id uuid='{E6C4115E-DC3D-4375-997E-FEA9D0EC26EE}' />
     </window>
     <window class='worksheet' name='Scatter'>
@@ -1805,34 +1856,6 @@ Conversely, densely populated (</run>
       </cards>
       <simple-id uuid='{94CA6B0F-761E-4254-995B-AC858C5A18DE}' />
     </window>
-    <window class='worksheet' name='Sheet 3'>
-      <cards>
-        <edge name='left'>
-          <strip size='160'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='2147483647'>
-            <card type='columns' />
-          </strip>
-          <strip size='2147483647'>
-            <card type='rows' />
-          </strip>
-          <strip size='31'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='160'>
-            <card pane-specification-id='0' param='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Schooling:qk]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{522F922E-17B4-4D4B-A55F-4D6B60335CDE}' />
-    </window>
     <window class='worksheet' name='Sheet 4'>
       <cards>
         <edge name='left'>
@@ -1854,7 +1877,7 @@ Conversely, densely populated (</run>
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='160'>
+          <strip size='149'>
             <card pane-specification-id='5' param='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' type='color' />
             <card pane-specification-id='6' param='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[sum:Infant_deaths:qk]' type='color' />
           </strip>
@@ -1862,10 +1885,39 @@ Conversely, densely populated (</run>
       </cards>
       <simple-id uuid='{2A102E37-D2E3-45EE-A9C4-CC1530D3E9DB}' />
     </window>
-    <window class='worksheet' name='Sheet 5'>
+    <window class='worksheet' name='Sheet 4 (2)'>
       <cards>
         <edge name='left'>
-          <strip size='289'>
+          <strip size='101'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='161'>
+            <card pane-specification-id='6' param='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Polio:qk]' type='color' />
+            <card pane-specification-id='7' param='[federated.0c4ew3c1gsznh9149en4t1v45hnw].[avg:Under_five_deaths:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{90D697A3-3B1B-410A-9B00-B3606FA544A2}' />
+    </window>
+    <window class='worksheet' name='Bubble'>
+      <cards>
+        <edge name='left'>
+          <strip size='100'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
@@ -1890,9 +1942,9 @@ Conversely, densely populated (</run>
       </cards>
       <simple-id uuid='{305B82A9-1512-409D-813C-CDD479299AF3}' />
     </window>
-    <window class='dashboard' name='HIV'>
+    <window class='dashboard' maximized='true' name='HIV'>
       <viewpoints>
-        <viewpoint name='Sheet 5' />
+        <viewpoint name='Bubble' />
       </viewpoints>
       <active id='-1' />
       <simple-id uuid='{AFC9A008-D96E-4446-999E-E4685A004D32}' />
